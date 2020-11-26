@@ -16,7 +16,7 @@
  */
 
 #include <iostream>
-#include <numeric>
+#include <algorithm>
 #include <stdexcept>
 
 /** \brief searches for an integer n between start and end, both inclusive such that n * n = m
@@ -71,7 +71,7 @@ public:
             a = -a;
             b = -b;
         }
-        int gcd_ = std::gcd(std::gcd(a, b), d);
+        int gcd_ = std::__gcd(std::__gcd(a, b), d);
         this->a = a / gcd_;
         this->b = b / gcd_;
         this->d = d / gcd_;
@@ -103,7 +103,7 @@ public:
             a = -a;
             b = -b;
         }
-        int gcd_ = std::gcd(a, d);
+        int gcd_ = std::__gcd(a, d);
         a /= gcd_;
         d /= gcd_;
         if (d < 0) {
@@ -182,7 +182,7 @@ private:
                 c = 0;
                 a = a + b * sqrt_c;
                 b = 0;
-                int gcd_ = std::gcd(a, d);
+                int gcd_ = std::__gcd(a, d);
                 a /= gcd_;
                 d /= gcd_;
             }
