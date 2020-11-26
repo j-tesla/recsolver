@@ -2,3 +2,5 @@
 a.out
 Doxyfile
 /docs/latex/
+CMakeLists.txt
+cmake-build-debug/
